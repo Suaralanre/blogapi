@@ -12,4 +12,4 @@ class PostSerializer(serializers.ModelSerializer):
             "body",
             "created_at",
         )
-    model = Post
+        model = Post
