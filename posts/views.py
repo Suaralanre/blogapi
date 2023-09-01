@@ -1,17 +1,19 @@
-from django.shortcuts import render
-from rest_framework import generics, permissions
+from django.contrib.auth import get_user_model
+from rest_framework.viewsets import ModelViewSet
 
 from .models import Post
-from .serializers import PostSerializer
+from .serializers import PostSerializer, UserSerializer
 from .permissions import IsAuthorOrReadOnly
 
-class PostList(generics.ListCreateAPIView):
+
+# Using viewsets for the related views
+
+class PostViewSet(ModelViewSet):
     permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 
-class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthorOrReadOnly,)
+class UserViewset(ModelViewSet):
     queryset = Post.objects.all()
-    serializer_class = PostSerializer
+    serializer_class = UserSerializer
