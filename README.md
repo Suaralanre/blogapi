@@ -9,9 +9,9 @@
     > It is implemented via the in-built **api-auth**, and 3rd party libraries - **dj-rest-auth(4.0.1)** and **django-allauth(0.54.0)**.
     It also incorporates email authentication when the user registers.
 3. Each Custom User is able to:
-:star2:	Create their own blog post and see other people's blog post
-:star2:	Each Custom User is able to view all of the blog posts.
-:star2:  View their own posts ONLY.
+- :star2:	Create their own blog post and see other people's blog post
+- :star2:	Each Custom User is able to view all of the blog posts.
+- :star2:  View their own posts ONLY.
 
 5. The views and routes are implemented via viewsets and routers
 > This is in contrast to the traditional repetition of multiple related views.
