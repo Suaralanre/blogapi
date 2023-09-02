@@ -154,6 +154,10 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = "user_accounts.CustomUser"
 
+REST_AUTH_SERIALIZERS = {
+    "USER_DETAILS_SERIALIZER": "posts.serializers.UserSerializer",
+}
+
 CORS_ORIGIN_WHITELIST = (
     "http://localhost:3000",
     "http://localhost:8000",

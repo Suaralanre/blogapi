@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAdminUser
 
 from .models import Post
 from .serializers import PostSerializer, UserSerializer
@@ -15,5 +16,6 @@ class PostViewSet(ModelViewSet):
 
 
 class UserViewset(ModelViewSet):
-    queryset = Post.objects.all()
+    permission_classes = [IsAdminUser]
+    queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
